@@ -40,6 +40,7 @@ Link or cite verification sources where appropriate. A second AI response does n
 **State one important uncertainty, failure mode, or limitation that remains.**
 
 ## Other AI use, if any
+10/23/2026: AI was used to help create the graphic included in our project proposal.
 11/10/2026: Used Google Gemini search overview to help answer questions of how to become a contributer to a project on GitHub and how to add people as contributers.
 
 **Briefly disclose earlier debugging, proofreading, or other AI assistance. Write “None” if there was no other use.**
