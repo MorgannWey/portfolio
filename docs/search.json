@@ -11,42 +11,42 @@
     "href": "ai-use.html#starting-point",
     "title": "AI Use and Verification",
     "section": "Starting point",
-    "text": "Starting point\nAI system and date: Replace.\nBefore using AI for the required extension, briefly state your question, course-based core model, baseline result, and the specific limitation or opportunity you wanted to address."
+    "text": "Starting point\nGoogle Gemini Argon 11/10/2026:\nBefore using AI for the required extension, briefly state your question, course-based core model, baseline result, and the specific limitation or opportunity you wanted to address.\nOur question is about how sleep habits affect the GPA of college freshmen. Our model we made using corse-based material is: term_gpa_i = 3.5138025 + -0.0298120(demo_gender_i) + 0.0216221(bedtime_mssd_i) + 0.0012581(TotalSleepTime_i) + -0.0011879(midpoint_sleep_i) + -0.0019896(daytime_sleep_i) + ε_i. Our baseline results included a Multiple R-squared value of 0.07515, an Adjusted R-squared value of 0.06775, an F-statistic value of 10.16 on 5 and 625 DF, and a p-value of 2.282e-09. Built into the data structure is the fact that no one can get above a 4.0, so there was a cap imposed on the response. Also, in the data the majority of points were between 6-8 hours of sleep, meaning that we had less data points for the extremes. We wanted a solution to improve at least one of these two problems."
   },
   {
     "objectID": "ai-use.html#substantive-prompts",
     "href": "ai-use.html#substantive-prompts",
     "title": "AI Use and Verification",
     "section": "Substantive prompts",
-    "text": "Substantive prompts\nPaste the exact prompts that shaped the extension. Include the customized extension-selection prompt from the checkpoint and any important implementation follow-ups. Delete unused prompt blocks.\n\nReplace with an exact prompt.\n\n\nReplace with another exact prompt, if needed."
+    "text": "Substantive prompts\nPaste the exact prompts that shaped the extension. Include the customized extension-selection prompt from the checkpoint and any important implementation follow-ups. Delete unused prompt blocks.\n\nI am creating a regression case study in R and Quarto. My question is whether sleep time affects GPA in first year college freshmen. The response is GPA, the main predictors are total sleep time, daytime sleep, bedtime consistency, midpoint sleep, and gender, and my course-based core model is (in R code) lm(formula = term_gpa ~ demo_gender + bedtime_mssd + TotalSleepTime + midpoint_sleep + daytime_sleep, data = sleep_data). My main result so far is that there seems to be some slight association. I found this limitation: since GPA is capped out at 4.0, so there is a hard line at 4.0. Also, since the majority of students got between 6 and 8 our of sleep per night we don’t have as much data about the extremes. Suggest three feasible extensions that keep the core analysis connected to regression methods taught in my class. One option may be a model not taught in class used as a comparator. For each, explain how it strengthens the same research question, how its result would enter the final case study, the implementation steps, and two ways I could verify it. Do not choose for me. Please list the pros and cons of each selection.\n\n\nReplace with another exact prompt, if needed."
   },
   {
     "objectID": "ai-use.html#my-decisions",
     "href": "ai-use.html#my-decisions",
     "title": "AI Use and Verification",
     "section": "My decisions",
-    "text": "My decisions\n\nAccepted: What useful advice did you use?\nChanged: What did you adapt to fit your data or goals?\nRejected or corrected: What advice was unsuitable, unnecessary, or wrong?\n\nConnection to the final case study: Identify where the extension’s method and result appear on the final page and how they strengthen the course-based analysis."
+    "text": "My decisions\n\nAccepted: What useful advice did you use? We are planning on using tobit regression to help address the issue of there being a cap on the response at 4.0.\nChanged: What did you adapt to fit your data or goals? –&gt; we will fill in these bottom two questions as we work on actually implementing the tobit regression.\nRejected or corrected: What advice was unsuitable, unnecessary, or wrong?\n\nConnection to the final case study: Identify where the extension’s method and result appear on the final page and how they strengthen the course-based analysis."
   },
   {
     "objectID": "ai-use.html#independent-verification",
     "href": "ai-use.html#independent-verification",
     "title": "AI Use and Verification",
     "section": "Independent verification",
-    "text": "Independent verification\n\nCheck and result: Replace with an official source, diagnostic, simulation, manual calculation, comparison with a known method, or another suitable check.\nCheck and result: Replace with a different check and what you learned.\n\nLink or cite verification sources where appropriate. A second AI response does not count as independent verification."
+    "text": "Independent verification\n\nCheck and result: Our first check will be to calculate the proportion of students who got a 4.0 to see if the censoring on the response is substantial. If they are, we will make sure that the Tobit slope magnitudes are systematically larger than the ordinary least squares slopes that we got.\nCheck and result: Our second check will be to compare predicted values from the core model to the tobit model to ensure that the computer eliminates predictions that are greater than a GPA of 4.0.\n\nLink or cite verification sources where appropriate. A second AI response does not count as independent verification."
   },
   {
     "objectID": "ai-use.html#remaining-limitation",
     "href": "ai-use.html#remaining-limitation",
     "title": "AI Use and Verification",
     "section": "Remaining limitation",
-    "text": "Remaining limitation\nState one important uncertainty, failure mode, or limitation that remains."
+    "text": "Remaining limitation\nState one important uncertainty, failure mode, or limitation that remains. With this model, we are still not addressing the fact that we have less data about the extremes."
   },
   {
     "objectID": "ai-use.html#other-ai-use-if-any",
     "href": "ai-use.html#other-ai-use-if-any",
     "title": "AI Use and Verification",
     "section": "Other AI use, if any",
-    "text": "Other AI use, if any\nBriefly disclose earlier debugging, proofreading, or other AI assistance. Write “None” if there was no other use."
+    "text": "Other AI use, if any\n10/23/2026: AI was used to help create the graphic included in our project proposal. 11/10/2026: Used Google Gemini search overview to help answer questions of how to become a contributer to a project on GitHub and how to add people as contributers.\nBriefly disclose earlier debugging, proofreading, or other AI assistance. Write “None” if there was no other use."
   },
   {
     "objectID": "index.html",
