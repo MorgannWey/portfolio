@@ -1,0 +1,93 @@
+---
+title: "Analyzing the Relationship Between Sleep Habits and GPA for First-Year College Students"
+subtitle: "First-year college students often struggle to prioritize sleep over school and social life, but they may find that skipping sleep hurts their GPA in the long run."
+author: "Morgan Weyland | Cosette Arnoldsen | Isaac Smith"
+date: last-modified
+description: "Students at Brigham Young University analyze sleep and GPA data to determine the relationship between sleep habits and GPA for first-year university students in the United States, including analyzing the effect of gender on the prediction."
+---
+
+**Narrative word count:** Replace with a number from 750 to 1,000. 789
+
+::: callout-tip
+This template suggests one way to tell the story. You may rename, combine, or reorder headings and add, remove, or move code chunks. Use plots, tables, selected model output, and prose in whatever combination best communicates your evidence. Keep every required part easy to find, use no more than four primary figures or tables, and delete this note and all bold prompts before submitting.
+:::
+
+## The question
+
+We're interested in creating a model that will help students understand what sleep habits are associated with higher or lower end-of-term GPA for a first-year university student. In addition to studying total sleep time, we wanted to look at other sleep habit variables such as when students are going to bed (average bedtime) and how much they're sleeping in the day and how that is associated with GPA. In addition, we wanted to examine the relationship between gender, sleep habits, and GPA to see whether the association between sleep habits and GPA differed by gender. 
+
+Our data source is from a study that tracked sleep data and GPA for first-year students at Carnegie Mellon, Notre Dame, and the University of Washington. One limitation is that the data did not come from a random sample of college students, so it may not be representative of the whole population.
+
+## What the baseline shows
+
+**Describe and justify a simple course-based baseline regression model. Interpret the result that best establishes the rest of the story, including its direction, magnitude, scale, and uncertainty. Explain one limitation or unresolved pattern that motivates deeper analysis.**
+
+```{r}
+library(tidyverse)
+sleep_data <- read_csv(
+    "https://raw.githubusercontent.com/MorgannWey/portfolio/main/cmu-sleep.csv"
+)
+
+sleep_fit1 <- lm(term_gpa ~ demo_gender + bedtime_mssd + TotalSleepTime + midpoint_sleep + daytime_sleep + demo_gender*TotalSleepTime + demo_gender:bedtime_mssd + demo_gender:midpoint_sleep + demo_gender:daytime_sleep, data = sleep_data)
+
+summary(sleep_fit1)
+# Load packages and data, document preparation, and fit the baseline.
+```
+
+```{r}
+# Show a primary figure or table only if it helps answer the question.
+```
+
+## Going beyond the baseline
+
+**Use two STAT 330 method families. Give each part a descriptive heading that states the question or finding, not an assignment label. Explain why you chose each method, how you checked it, and what it adds to the answer.**
+
+### Replace with a question or finding
+
+**Present one method and its most useful evidence.**
+
+```{r}
+# Analysis code for this part.
+```
+
+### Replace with another question or finding
+
+**Present a method from a different family and its most useful evidence. Combine this with the preceding subsection if that creates a clearer story.**
+
+```{r}
+# Analysis code for this part.
+```
+
+## A new direction with AI
+
+**Explain the need revealed by your preliminary course-based work, the extension you implemented with AI support, and what it contributes to the same research question. Show its substantive result on this page and summarize your independent checks. If the extension is an untaught comparator, evaluate it against the core course-based model. Link to the AI-use record instead of placing a transcript here.**
+
+```{r}
+# Implement the verified extension or show its most useful result.
+```
+
+Details are in the [AI-use record](ai-use.qmd).
+
+## What this means
+
+**Answer the research question directly. Distinguish statistical evidence from practical importance, state the most consequential limitations, and suggest one sensible next step. Avoid causal claims unless the study design supports them.**
+
+## Data and code
+
+**Data:**
+
+Citation: J.D. Creswell,M.J. Tumminia,S. Price,Y. Sefidgar,S. Cohen,Y. Ren,J. Brown,A.K. Dey,J.M. Dutcher,D. Villalba,J. Mankoff,X. Xu,K. Creswell,A. Doryab,S. Mattingly,A. Striegel,D. Hachen,G. Martinez, & M.C. Lovett, Nightly sleep duration predicts grade point average in the first year of college, Proc. Natl. Acad. Sci. U.S.A. 120 (8) e2209123120, <https://doi.org/10.1073/pnas.2209123120> (2023).
+
+Study accessible at <https://www.pnas.org/doi/10.1073/pnas.2209123120.>
+
+Data downloaded from <https://cmustatistics.github.io/data-repository/psychology/cmu-sleep.html>
+
+**Repository:** <https://github.com/MorgannWey/portfolio.git>
+
+**AI Use:** [AI-use record](ai-use.qmd)
+
+**Other sources:** Cite package documentation, articles, code, and other sources that materially informed the work.
+
+<https://datasciencebook.ca/reading.html>
+
+(more citations to come in our final upload)
