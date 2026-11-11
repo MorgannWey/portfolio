@@ -51,50 +51,50 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Replace with a specific, informative title",
+    "title": "Analyzing the Relationship Between Sleep Habits and GPA for First-Year College Students",
     "section": "",
-    "text": "Narrative word count: Replace with a number from 750 to 1,000."
+    "text": "Narrative word count: Replace with a number from 750 to 1,000. 789"
   },
   {
     "objectID": "index.html#the-question",
     "href": "index.html#the-question",
-    "title": "Replace with a specific, informative title",
+    "title": "Analyzing the Relationship Between Sleep Habits and GPA for First-Year College Students",
     "section": "The question",
-    "text": "The question\nIn one or two short paragraphs, introduce the setting, audience, focused research question, data source, observational unit, response, important predictors, and one important data limitation. Lead with what makes the question worth answering."
+    "text": "The question\nWe’re interested in creating a model that will help students understand what sleep habits are associated with higher or lower end-of-term GPA for a first-year university student. In addition to studying total sleep time, we wanted to look at other sleep habit variables such as when students are going to bed (average bedtime) and how much they’re sleeping in the day and how that is associated with GPA. In addition, we wanted to examine the relationship between gender, sleep habits, and GPA to see whether the association between sleep habits and GPA differed by gender.\nOur data source is from a study that tracked sleep data and GPA for first-year students at Carnegie Mellon, Notre Dame, and the University of Washington. One limitation is that the data did not come from a random sample of college students, so it may not be representative of the whole population."
   },
   {
     "objectID": "index.html#what-the-baseline-shows",
     "href": "index.html#what-the-baseline-shows",
-    "title": "Replace with a specific, informative title",
+    "title": "Analyzing the Relationship Between Sleep Habits and GPA for First-Year College Students",
     "section": "What the baseline shows",
-    "text": "What the baseline shows\nDescribe and justify a simple course-based baseline regression model. Interpret the result that best establishes the rest of the story, including its direction, magnitude, scale, and uncertainty. Explain one limitation or unresolved pattern that motivates deeper analysis.\n\n\nShow code\n# Load packages and data, document preparation, and fit the baseline.\n\n\n\n\nShow code\n# Show a primary figure or table only if it helps answer the question."
+    "text": "What the baseline shows\nDescribe and justify a simple course-based baseline regression model. Interpret the result that best establishes the rest of the story, including its direction, magnitude, scale, and uncertainty. Explain one limitation or unresolved pattern that motivates deeper analysis.\n\n\nShow code\nlibrary(tidyverse)\nsleep_data &lt;- read_csv(\n    \"https://raw.githubusercontent.com/MorgannWey/portfolio/main/cmu-sleep.csv\"\n)\n\nsleep_fit1 &lt;- lm(term_gpa ~ demo_gender + bedtime_mssd + TotalSleepTime + midpoint_sleep + daytime_sleep + demo_gender*TotalSleepTime + demo_gender:bedtime_mssd + demo_gender:midpoint_sleep + demo_gender:daytime_sleep, data = sleep_data)\n\nsummary(sleep_fit1)\n\n\n\nCall:\nlm(formula = term_gpa ~ demo_gender + bedtime_mssd + TotalSleepTime + \n    midpoint_sleep + daytime_sleep + demo_gender * TotalSleepTime + \n    demo_gender:bedtime_mssd + demo_gender:midpoint_sleep + demo_gender:daytime_sleep, \n    data = sleep_data)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-2.65244 -0.21644  0.09166  0.33907  1.06815 \n\nCoefficients:\n                             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)                 3.7706609  0.3794179   9.938  &lt; 2e-16 ***\ndemo_gender                -0.4610912  0.4913493  -0.938   0.3484    \nbedtime_mssd                0.0351286  0.0205393   1.710   0.0877 .  \nTotalSleepTime              0.0015490  0.0006642   2.332   0.0200 *  \nmidpoint_sleep             -0.0020226  0.0004791  -4.222 2.78e-05 ***\ndaytime_sleep              -0.0028915  0.0010867  -2.661   0.0080 ** \ndemo_gender:TotalSleepTime -0.0004574  0.0008564  -0.534   0.5935    \ndemo_gender:bedtime_mssd   -0.0251073  0.0304399  -0.825   0.4098    \ndemo_gender:midpoint_sleep  0.0013680  0.0006206   2.204   0.0279 *  \ndemo_gender:daytime_sleep   0.0018153  0.0014811   1.226   0.2208    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.4818 on 621 degrees of freedom\n  (3 observations deleted due to missingness)\nMultiple R-squared:  0.08826,   Adjusted R-squared:  0.07505 \nF-statistic: 6.679 on 9 and 621 DF,  p-value: 3.709e-09\n\n\nShow code\n# Load packages and data, document preparation, and fit the baseline.\n\n\n\n\nShow code\n# Show a primary figure or table only if it helps answer the question."
   },
   {
     "objectID": "index.html#going-beyond-the-baseline",
     "href": "index.html#going-beyond-the-baseline",
-    "title": "Replace with a specific, informative title",
+    "title": "Analyzing the Relationship Between Sleep Habits and GPA for First-Year College Students",
     "section": "Going beyond the baseline",
     "text": "Going beyond the baseline\nUse two STAT 330 method families. Give each part a descriptive heading that states the question or finding, not an assignment label. Explain why you chose each method, how you checked it, and what it adds to the answer.\n\nReplace with a question or finding\nPresent one method and its most useful evidence.\n\n\nShow code\n# Analysis code for this part.\n\n\n\n\nReplace with another question or finding\nPresent a method from a different family and its most useful evidence. Combine this with the preceding subsection if that creates a clearer story.\n\n\nShow code\n# Analysis code for this part."
   },
   {
     "objectID": "index.html#a-new-direction-with-ai",
     "href": "index.html#a-new-direction-with-ai",
-    "title": "Replace with a specific, informative title",
+    "title": "Analyzing the Relationship Between Sleep Habits and GPA for First-Year College Students",
     "section": "A new direction with AI",
     "text": "A new direction with AI\nExplain the need revealed by your preliminary course-based work, the extension you implemented with AI support, and what it contributes to the same research question. Show its substantive result on this page and summarize your independent checks. If the extension is an untaught comparator, evaluate it against the core course-based model. Link to the AI-use record instead of placing a transcript here.\n\n\nShow code\n# Implement the verified extension or show its most useful result.\n\n\nDetails are in the AI-use record."
   },
   {
     "objectID": "index.html#what-this-means",
     "href": "index.html#what-this-means",
-    "title": "Replace with a specific, informative title",
+    "title": "Analyzing the Relationship Between Sleep Habits and GPA for First-Year College Students",
     "section": "What this means",
     "text": "What this means\nAnswer the research question directly. Distinguish statistical evidence from practical importance, state the most consequential limitations, and suggest one sensible next step. Avoid causal claims unless the study design supports them."
   },
   {
     "objectID": "index.html#data-and-code",
     "href": "index.html#data-and-code",
-    "title": "Replace with a specific, informative title",
+    "title": "Analyzing the Relationship Between Sleep Habits and GPA for First-Year College Students",
     "section": "Data and code",
-    "text": "Data and code\n\nData: Replace with a working source link or citation and any brief acquisition note needed to reproduce the project.\nRepository: Replace with your repository URL.\nAI-use record\nOther sources: Cite package documentation, articles, code, and other sources that materially informed the work."
+    "text": "Data and code\nData:\nCitation: J.D. Creswell,M.J. Tumminia,S. Price,Y. Sefidgar,S. Cohen,Y. Ren,J. Brown,A.K. Dey,J.M. Dutcher,D. Villalba,J. Mankoff,X. Xu,K. Creswell,A. Doryab,S. Mattingly,A. Striegel,D. Hachen,G. Martinez, & M.C. Lovett, Nightly sleep duration predicts grade point average in the first year of college, Proc. Natl. Acad. Sci. U.S.A. 120 (8) e2209123120, https://doi.org/10.1073/pnas.2209123120 (2023).\nStudy accessible at https://www.pnas.org/doi/10.1073/pnas.2209123120.\nData downloaded from https://cmustatistics.github.io/data-repository/psychology/cmu-sleep.html\nRepository: https://github.com/MorgannWey/portfolio.git\nAI Use: AI-use record\nOther sources: Cite package documentation, articles, code, and other sources that materially informed the work.\nhttps://datasciencebook.ca/reading.html\n(more citations to come in our final upload)"
   }
 ]
